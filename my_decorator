@@ -1,0 +1,15 @@
+def before_after(func):
+    def wrapper(*args, **kwargs):
+        print("Before function call")
+        value = func(*args, **kwargs)
+        print("After function call")
+        return value
+    return wrapper
+
+@before_after
+def add(a, b, c):
+    print("Inside a function")
+    return (a+b+c)
+
+x = add(9, 2 , 4)
+print(x)
